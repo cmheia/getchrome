@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get Chrome Download Url</title>
+    <link href="http://shuax-static.qiniudn.com/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://shuax-static.qiniudn.com/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="http://shuax-static.qiniudn.com/css/chrome.css" rel="stylesheet">
+  </head>
+
+  <body spellcheck="false">
+
+    <div class="container">
+
+      <div class="title">
+          <h1 class="masthead-brand">获取Chrome下载地址</h1>
+      </div>
+
+      <div class="inner">
+        <p>
+            <label>选择版本：</label>
+            <select class="selectpicker show-tick" name="edition" multiple>
+                <optgroup label="分支：" name="branch" data-max-options="1">
+                    <option selected>Stable</option>
+                    <option>Beta</option>
+                    <option>Dev</option>
+                    <option>Canary</option>
+                </optgroup>
+                <optgroup label="架构：" name="arch" data-max-options="1">
+                    <option selected>x86</option>
+                    <option>x64</option>
+                </optgroup>
+            </select>
+            <a href="#" class="btn btn-default" id="query">查询</a>
+        </p>
+        <div class="loader line-scale" style="display:none"><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="content" style="display:none">
+            <div>最新版本：<code><span id="version"></span></code>，文件大小：<code><span id="size"></span></code>。</p>
+            下载地址：<div class="highlight"><pre><code id="url"></code></pre></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="http://shuax-static.qiniudn.com/js/jquery-2.1.3.min.js"></script>
+    <script src="http://shuax-static.qiniudn.com/js/bootstrap.min.js"></script>
+    <script src="http://shuax-static.qiniudn.com/js/bootstrap-select.min.js"></script>
+    <script src="http://shuax-static.qiniudn.com/js/ZeroClipboard.min.js"></script>
+    <script src="http://shuax-static.qiniudn.com/js/chrome.js"></script>
+  </body>
+</html>
