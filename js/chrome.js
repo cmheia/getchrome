@@ -11,6 +11,8 @@ function complete(version, size, url)
     return false;
 }
 
+var querying = false;
+
 $(document).ready(function() {
     $.fn.selectpicker.defaults = {
         noneSelectedText: '没有选中任何项',
@@ -22,7 +24,7 @@ $(document).ready(function() {
     $("[name='edition']").selectpicker({"autofocus":false});
 
     ZeroClipboard.config({
-        moviePath: "http://shuax-static.qiniudn.com/js/ZeroClipboard.swf",
+        moviePath: "/js/ZeroClipboard.swf",
         hoverClass: "btn-clipboard-hover"
     }),
 
@@ -77,6 +79,9 @@ $(document).ready(function() {
             return complete("", "", "请选择一个架构")
         }
 
+        if(querying) return false;
+
+        querying = true;
         $.ajax({
             url: "/getchrome",
             type: "post",
@@ -85,6 +90,10 @@ $(document).ready(function() {
                 "data": JSON.stringify({"branch":branch, "arch":arch})
             },
             dataType: "json",
+            complete: function()
+            {
+                querying = false;
+            },
             error: function() {
                 complete("", "", "服务器连接错误。");
             },

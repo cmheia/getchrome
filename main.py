@@ -7,13 +7,21 @@ import traceback
 
 requests.packages.urllib3.disable_warnings()
 
+@bottle.route('/js/<filepath:path>')
+def js_views(filepath):
+    return bottle.static_file(filepath,root='js/')
+
+@bottle.route('/css/<filepath:path>')
+def css_views(filepath):
+    return bottle.static_file(filepath,root='css/')
+    
+@bottle.route('/fonts/<filepath:path>')
+def fonts_views(filepath):
+    return bottle.static_file(filepath,root='fonts/')
+
 @bottle.get('/getchrome')
 def index():
     return bottle.static_file("index.html", ".")
-
-@bottle.get('/chrome.js')
-def index():
-    return bottle.static_file("chrome.js", ".")
 
 @bottle.post('/getchrome')
 def query():
@@ -35,7 +43,7 @@ def query():
         ap = {"Stable":{"x86":"-multi-chrome", "x64":"x64-stable-multi-chrome"}, "Beta":{"x86":"1.1-beta", "x64":"x64-beta-multi-chrome"}, "Dev":{"x86":"2.0-dev", "x64":"x64-dev-multi-chrome"}, "Canary":{"x86":"", "x64":"x64-canary"}}
 
         xml = "<?xml version='1.0' encoding='UTF-8'?><request protocol='3.0' ismachine='0'><os platform='win' version='6.3' arch='x64'/><app appid='{{{0}}}' ap='{1}'><updatecheck/></app></request>".format(appid[branch], ap[branch][arch])
-        r = requests.post('https://tools.google.com/service/update2', data=xml, timeout=2)
+        r = requests.post('http://tools.google.com/service/update2', data=xml, timeout=2)
 
         root = tree.fromstring(r.text)
 
