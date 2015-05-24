@@ -100,7 +100,12 @@ $(document).ready(function() {
             success: function(data) {
                 if(data.success)
                 {
-                    complete(data.version, data.size, data.url.join("\n"));
+                    var urls = ""
+                    for (var i in data.url) {
+                        var url = data.url[i]
+                        urls += '<a href="' + url + '">' + url + '</a>\n'
+                    }
+                    complete(data.version, data.size, urls);
                 }
                 else
                 {
