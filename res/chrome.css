@@ -1,26 +1,121 @@
-
-
 /*
  * Base structure
  */
 body {
-    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif
+    font-family: Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, a, .a, label, option, input, select, button, textarea, div {
-    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
+    font-family: Helvetica, Arial, "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
 }
 
 html,
 body {
   height: 100%;
+  margin: 0;
 }
 body {
   line-height: 1.5;
 }
 
-h1
-{
-  line-height: 2;
+.container {
+  padding: 15px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td.pad {
+width: 15px;
+}
+a {
+  color: #337ab7;
+  text-decoration:none;
+}
+
+a.extlink, .footer {
+  color:#888888;
+  margin: 0;
+}
+
+.btn {
+display:inline-block;
+margin-bottom:0;
+font-size:14px;
+font-weight:400;
+line-height:1.428571;
+text-align:center;
+white-space:nowrap;
+vertical-align:middle;
+-ms-touch-action:manipulation;
+touch-action:manipulation;
+cursor:pointer;
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+user-select:none;
+background-image:none;
+border:1px solid transparent;
+border-radius:4px;
+padding:6px 12px;
+}
+
+.btn.focus,.btn:focus,.btn:hover {
+color:#333;
+text-decoration:none;
+}
+
+.btn-default {
+color:#333;
+background-color:#fff;
+border-color:#ccc;
+}
+
+.btn-default.focus,.btn-default:focus {
+color:#333;
+background-color:#e6e6e6;
+border-color:#8c8c8c;
+}
+
+.btn-default:hover {
+color:#333;
+background-color:#e6e6e6;
+border-color:#adadad;
+}
+
+p {
+	margin: 10px 0;
+}
+
+code {
+padding: 2px 4px;
+font-size: 90%;
+color: #c7254e;
+background-color: #f9f2f4;
+border-radius: 4px;
+font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+pre {
+display: block;
+padding: 9.5px;
+margin: 0 0 10px;
+font-size: 13px;
+line-height: 1.42857143;
+color: #333;
+word-break: break-all;
+word-wrap: break-word;
+background-color: #f5f5f5;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+pre code {
+font-size:inherit;
+color:inherit;
+white-space:pre-wrap;
+background-color:transparent;
+border-radius:0;
+padding:0;
 }
 
 .zero-clipboard {
