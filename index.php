@@ -65,7 +65,7 @@ if ($data != null) {
 			'Canary' => array('x86'=>'', 'x64'=>'x64-canary')
 		);
 
-		$updatecheck = "<?xml version='1.0' encoding='UTF-8'?><request protocol='3.0' ismachine='0'><os platform='win' version='6.3' arch='x64'/><app appid='{".$appid[$branch]."}' ap='".$ap[$branch][$arch]."'><updatecheck/></app></request>";
+		$updatecheck = "<?xml version='1.0' encoding='UTF-8'?><request protocol='3.0' ismachine='0'><hw sse='1' sse2='1' sse3='1' ssse3='1' sse41='1' sse42='1' avx='1' physmemory='16777216' /><os platform='win' version='6.3' arch='x64'/><app appid='{".$appid[$branch]."}' ap='".$ap[$branch][$arch]."'><updatecheck/></app></request>";
 
 		try {
 			$xml = curl_post("http://tools.google.com/service/update2", $updatecheck, $timeout);
