@@ -111,7 +111,10 @@ if ($data != null) {
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+		<meta name="keywords" content="chrome latest" />
+		<meta name="description" content="查询最新版 Chrome 下载地址" />
 		<title>获取Chrome下载地址 mod by 「有事燒紙」</title>
 		<link href="res/chrome.css" rel="stylesheet">
 		<script src="res/chrome.js"></script>
