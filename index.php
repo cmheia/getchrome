@@ -152,7 +152,7 @@ if ($data != null) {
 			<td class="pad">
 			</td>
 			<td>
-			3、<a href="#" class="btn btn-default" id="query" onclick="javascript:query()">查询</a>
+			3、<a href="javascript:query()" class="btn btn-default" id="query">查询</a>
 			</td>
 			</tr>
 		</table>
